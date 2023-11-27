@@ -3,26 +3,31 @@ const jre = require('node-jre');
 
 
 const params = [
-    "6",
-    "constants/certificado/ministeriopulico.ks", //"E:\\Desarrollo 2019\\2018-63_mp_backend-firma-electronica-institucional\\DAEMOND_FIRMA\\constants\\certificado\\ministeriopulico.ks";  // "E://requisitos/ministeriopulico.ks"; 
-    "changeit", //ministeriopublico
-    "MPf1rm@2018", 
+    "2",
+    "/Users/luciochumil/Desktop/logos/ministeriopublico.ks", //"E:\\Desarrollo 2019\\2018-63_mp_backend-firma-electronica-institucional\\DAEMOND_FIRMA\\constants\\certificado\\ministeriopulico.ks";  // "E://requisitos/ministeriopulico.ks"; 
+    "ministeriopublico", //ministeriopublico
+    "MP2017FDigital", 
     "http://consultasmp.mp.gob.gt/docs/index.html?cve=",
+
     "/Users/luciochumil/Documents/MP_PROJECTS/Estanpado_firma/prueba_estampado/archivos", //"E:\\requisitos\\",
     "",
     "/Users/luciochumil/Documents/MP_PROJECTS/Estanpado_firma/prueba_estampado/firmados",
+    
     "/prueba.pdf",//tupla.nameFirma,
     "prueba.pdf",
     "prueba.pdf",
     "234567890",
-    "constants/logos/",//"constants/logos/",
-    "prueba",
+    "01/08/2018[*]04:43",
+    "/Users/luciochumil/Desktop/logos/",//"constants/logos/",
+    "justificacion",
     "http://consultasmp.mp.gob.gt/docs/index.html?cve=",
     "0",//tupla.flagMarcaAgua,//MARCA DE AGUA
-    "tupla.generalInfoSign.nameUser",
-    "tupla.generalInfoSign.puestoUser",
-    "tupla.generalInfoSign.procedencia",
-    "tupla.renas.nombre",
+
+
+    "JULIO LOPEZ",
+    "ANALISTA 3",
+    "SIAMP",
+    "JULIO",
     "tupla.renas.cui",
     "tupla.renas.mensaje",
     "tupla.renas.fechaGenerado",
@@ -40,16 +45,7 @@ exports.estampadoFirma = async  ( req, res ) => {
     try {
 
       // Ruta al archivo JAR
-      const rutaAlJar = "/Users/luciochumil/Documents/MP_PROJECTS/Estanpado_firma/2019-43_mp_firma_unificada_jar/firma-electronica.jar";
-
-      // Configuración del entorno Java
-     /*  const config = {
-        // Opciones de Java (opcional)
-        options: ['-Xmx512m'],
-        // Ruta al archivo JAR
-        classpath: rutaAlJar,
-        
-      }; */
+      const rutaAlJar = "/Users/luciochumil/Documents/MP_PROJECTS/Estanpado_firma/2019-43_mp_firma_unificada_jar/dist/firma-electronica.jar";
 
       // Ejecutar el archivo JAR
       const resp = jre.spawnSync(
@@ -58,7 +54,7 @@ exports.estampadoFirma = async  ( req, res ) => {
           params,
           { encoding: 'utf8' }
       );
-      console.log(resp)
+   
       res.json({ resp });
 
     } catch (error) {
