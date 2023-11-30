@@ -17,7 +17,7 @@ exports.estampadoFirma = async  ( req, res ) => {
 
     "/Users/luciochumil/Documents/MP_PROJECTS/Estanpado_firma/prueba_estampado/archivos", //"E:\\requisitos\\",
     "",
-    "/Users/luciochumil/Documents/MP_PROJECTS/Estanpado_firma/prueba_estampado/firmados",
+    "/Users/luciochumil/Documents/MP_PROJECTS/Estanpado_firma/prueba_estampado/firmados/",
     
     "/" + file,//tupla.nameFirma,
     file,
