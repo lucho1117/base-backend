@@ -9,16 +9,14 @@ exports.estampadoFirma = async  ( req, res ) => {
 
   const file = req.params.documento + ".pdf";
   const params = [
-    "2",
+    "8",
     "/Users/luciochumil/Desktop/logos/ministeriopublico.ks", //"E:\\Desarrollo 2019\\2018-63_mp_backend-firma-electronica-institucional\\DAEMOND_FIRMA\\constants\\certificado\\ministeriopulico.ks";  // "E://requisitos/ministeriopulico.ks"; 
     "ministeriopublico", //ministeriopublico
     "MP2017FDigital", 
     "http://consultasmp.mp.gob.gt/docs/index.html?cve=",
-
     "/Users/luciochumil/Documents/MP_PROJECTS/Estanpado_firma/prueba_estampado/archivos", //"E:\\requisitos\\",
     "",
     "/Users/luciochumil/Documents/MP_PROJECTS/Estanpado_firma/prueba_estampado/firmados/",
-    
     "/" + file,//tupla.nameFirma,
     file,
     file,
@@ -28,8 +26,6 @@ exports.estampadoFirma = async  ( req, res ) => {
     "justificacion",
     "http://consultasmp.mp.gob.gt/docs/index.html?cve=",
     "0",//tupla.flagMarcaAgua,//MARCA DE AGUA
-
-
     "JULIO LOPEZ",
     "ANALISTA 3",
     "SIAMP",
@@ -38,10 +34,37 @@ exports.estampadoFirma = async  ( req, res ) => {
     "tupla.renas.mensaje",
     "tupla.renas.fechaGenerado",
     "tupla.renas.fechaVence",
-    "users", //json de datos usuarios 
+    `{'usuarios':[{'_id':'5dc2d41dae7f76fcf66758ce',
+    'orderSign':1,
+    'nip':'20171119',
+    'name':'JOSÉ DANIEL GUDIEL DE LEÓN',
+    'job':'ANALISTA PROGRAMADOR',
+    'departament':'DEPARTAMENTO DEL SISTEMA INFORMATICO DEL CONTROL DE INVESTIGACION DEL MINISTERIO PUBLICO',
+    'statusSign':true,
+    'signDate':'01/08/2018 04:43',
+    'keyStore':'ministeriopulico.ks',
+    'certPass':'MP2017FDigital',
+    'keyPass':'ministeriopublico',
+    'signStore':'Logo_MP.png',
+    'signR':'Logo_MP.png',
+    'stampStore':'Logo_MP.png'},
+    {'_id':'5dc2d41dae7f76fcf66758cd',
+    'orderSign':2,
+    'nip':'20170440',
+    'name':'JORGE LUIS HIDALGO LÓPEZ',
+    'job':'ANALISTA EN DESARROLLO DE APLICACIONES INFORMATICAS',
+    'departament':'UNIDAD DE EVALUACION DEL DESEMPEÑO DEL MINISTERIO PUBLICO',
+    'statusSign':true,
+    'signDate':'01/08/2018 04:43',
+    'keyStore':'ministeriopulico.ks',
+    'certPass':'MP2017FDigital',
+    'keyPass':'ministeriopublico',
+    'signStore':'Logo_MP.png',
+    'signR':'Logo_MP.png',
+    'stampStore':'Logo_MP.png'}]}`, //json de datos usuarios 
     "config.CERT_USERS", // ubicacion de certificados personales
-    "config.SIGN_USERS", // ubicacion de firma personales
-    "config.STAMP_USERS" // ubicacion de firma personales
+    "logos", // ubicacion de firma personales
+    "logos" // ubicacion de firma personales
   ]
    
   try {
