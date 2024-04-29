@@ -9,8 +9,8 @@ exports.estampadoFirma = async  ( req, res ) => {
 
   const file = req.params.documento + ".pdf";
   const params = [
-    "8",
-    "/Users/luciochumil/Desktop/logos/ministeriopublico.ks", //"E:\\Desarrollo 2019\\2018-63_mp_backend-firma-electronica-institucional\\DAEMOND_FIRMA\\constants\\certificado\\ministeriopulico.ks";  // "E://requisitos/ministeriopulico.ks"; 
+    "1",
+    "/Users/luciochumil/Documents/MP_PROJECTS/Estanpado_firma/prueba_estampado/logos/ministeriopublico.ks", //"E:\\Desarrollo 2019\\2018-63_mp_backend-firma-electronica-institucional\\DAEMOND_FIRMA\\constants\\certificado\\ministeriopulico.ks";  // "E://requisitos/ministeriopulico.ks"; 
     "ministeriopublico", //ministeriopublico
     "MP2017FDigital", 
     "http://consultasmp.mp.gob.gt/docs/index.html?cve=",
@@ -22,7 +22,7 @@ exports.estampadoFirma = async  ( req, res ) => {
     file,
     "234567890",
     "01/08/2018[*]04:43",
-    "/Users/luciochumil/Desktop/logos/",//"constants/logos/",
+    "/Users/luciochumil/Documents/MP_PROJECTS/Estanpado_firma/prueba_estampado/logos/",//"constants/logos/",
     "justificacion",
     "http://consultasmp.mp.gob.gt/docs/index.html?cve=",
     "0",//tupla.flagMarcaAgua,//MARCA DE AGUA
